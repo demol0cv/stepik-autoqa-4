@@ -1,1 +1,1 @@
-# stepik-autoqa-4
+# Паттерн Page Object
