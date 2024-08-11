@@ -39,11 +39,11 @@ def browser(request):
     browser = None
     options = Options()
     if user_language not in langs:
-        raise pytest.UsageError(f"--language должен быть равен одному из следующих значений: {langs}")
+        raise pytest.UsageError(f"--language должен быть равен одному из следующих значений: {langs}")  # noqa: EM102, TRY003
     options.add_experimental_option("prefs", {"intl.accept_languages": user_language})
     print("\nstart chrome browser for test..")
     browser = webdriver.Chrome(options=options)
     yield browser
-    time.sleep(30)
+    # time.sleep(30)
     print("\nquit browser..")
     browser.quit()
