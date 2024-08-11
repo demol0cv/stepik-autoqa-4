@@ -1,18 +1,10 @@
-import math
-import os
-import time
 
-import pytest
-from loguru import logger
-from selenium.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
 
 
 class BasePage():
-    def __init__(self, browser: RemoteWebDriver, url, timeout=10):
+    def __init__(self, browser: RemoteWebDriver, url, timeout=10)-> None:  # noqa: D107
         self.browser = browser
         self.url = url
         self.browser.implicitly_wait(timeout)
