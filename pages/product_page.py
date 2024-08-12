@@ -4,8 +4,8 @@ from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
     def should_be_add_to_basket_button(self):
-        assert self.is_element_present(*ProductPageLocators.BUTTON_ADD_TO_BASKET), "Add to basket button is not presented"
-    
+        assert self.is_element_present(*ProductPageLocators.BUTTON_ADD_TO_BASKET), "Add to basket button is not presented"  # noqa: E501
+
     def should_be_basket_alert(self):
         assert self.is_element_present(*ProductPageLocators.ALERT_SUCCESS_MESSAGES), "Basket alert is not presented"
 
@@ -25,5 +25,5 @@ class ProductPage(BasePage):
         assert alert_text == product_title, f"{alert_text} != {product_title}"
 
     def should_not_be_success_message(self):
-        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+        assert self.is_not_element_present(*ProductPageLocators.ALERT_SUCCESS_MESSAGES), \
         "Success message is presented, but should not be"

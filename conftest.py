@@ -1,8 +1,11 @@
-import time
+import secrets
+import string
+import time  # noqa: F401
 
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
 
 langs = [
 "ar",
@@ -44,6 +47,14 @@ def browser(request):
     print("\nstart chrome browser for test..")
     browser = webdriver.Chrome(options=options)
     yield browser
-    # time.sleep(30)
+    # time.sleep(30)  # noqa: ERA001
     print("\nquit browser..")
     browser.quit()
+
+@pytest.fixture()
+def login_pair(request)-> (str, str):
+    alphabet = string.ascii_letters + string.digits
+    email = str(time.time()) + "@fakemail.org"
+    password = "".join(secrets.choice(alphabet) for i in range(12))
+    
+    return (email, password)

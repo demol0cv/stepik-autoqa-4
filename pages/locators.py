@@ -1,11 +1,21 @@
 from selenium.webdriver.common.by import By
 
 
+class BasePageLocators:
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 class LoginPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    FIELD_EMAIL = (By.CSS_SELECTOR, "input#id_registration-email")
+    FIELD_PASSWORD = (By.CSS_SELECTOR, "input#id_registration-password1")
+    FIELD_REPEAT_PASSWORD = (By.CSS_SELECTOR, "input#id_registration-password2")
+    BUTTON_REGIESTER = (By.CSS_SELECTOR, "form#register_form>button.btn.btn-lg.btn-primary")
+
 
 class ProductPageLocators:
     BUTTON_ADD_TO_BASKET = (By.CSS_SELECTOR, "button.btn.btn-lg.btn-primary.btn-add-to-basket")
