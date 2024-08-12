@@ -5,7 +5,7 @@ class BasePageLocators:
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
-
+    BASKET_LINK = (By.CSS_SELECTOR, "div.basket-mini>span>a.btn")
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
@@ -22,3 +22,7 @@ class ProductPageLocators:
     ALERT_INNER = (By.CSS_SELECTOR, "div.alertinner>strong")
     ALERT_SUCCESS_MESSAGES = (By.CSS_SELECTOR, "div#messages>div.alert-success")
     PRODUCT_TITLE = (By.CSS_SELECTOR, "div.col-sm-6.product_main>h1")
+
+class BasketPageLocators:
+    BASKET_ITEMS_FORM = (By.CSS_SELECTOR, "form#basket_formset")
+    BASKET_TEXT_EMPTY = (By.CSS_SELECTOR, "div#content_inner>p")
